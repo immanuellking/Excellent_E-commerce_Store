@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.header-links {
+  @apply text-lg font-normal hover:text-brightRed cursor-pointer
+}
+.mobile-header-links {
+  @apply flex space-x-3 items-center text-base font-normal cursor-pointer hover:text-brightRed
+}
