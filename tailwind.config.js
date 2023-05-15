@@ -12,7 +12,8 @@ export default {
       colors: {
         "brightRed": "#DB4444",
         "lightGrey": "#FAFAFA",
-      },
+        "midGrey": "#F5F5F5"
+       },
     },
   },
   plugins: [],

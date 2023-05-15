@@ -24,15 +24,15 @@ const Header = () => {
             </ul>
         </div>
         <div className="flex flex-1 justify-end space-x-0 sm:space-x-7">
-            <div className="sm:flex sm:bg-[#F5F5F5] sm:w-[240px] sm:h-[35px] ">
+            <div className="flex bg-midGrey w-60 h-9 ">
                 <input type="search" placeholder="What are you looking for?" className="border-0 outline-0 bg-transparent w-full h-full text-xs pl-5 hidden sm:block" />
-                <FiSearch className="flex items-center justify-center p-2 w-11 h-full cursor-pointer hover:text-brightRed"/>
+                <FiSearch className="flex items-center justify-center p-2 w-11 h-full cursor-pointer"/>
             </div>
             <div className="flex items-center space-x-3 lg:space-x-6">
-                <BsHeart className="w-[20px] h-[20px] cursor-pointer hover:text-brightRed" />
-                <AiOutlineShoppingCart className="w-[20px] h-[20px] cursor-pointer hover:text-brightRed"/>
-                <div className="hidden sm:flex bg-[#DB4444] w-[32px] h-[32px] rounded-full justify-center items-center hover:bg-white hover:border-2 hover:border-[#DB4444] cursor-pointer">
-                    <BsPerson className="w-[20px] h-[20px] text-white hover:text-brightRed" />
+                <BsHeart className="w-5 h-5 cursor-pointer hover:text-brightRed" />
+                <AiOutlineShoppingCart className="w-5 h-5 cursor-pointer hover:text-brightRed"/>
+                <div className="hidden sm:flex bg-[#DB4444] w-8 h-8 rounded-full justify-center items-center hover:bg-white hover:border-2 hover:border-[#DB4444] text-white hover:text-brightRed cursor-pointer">
+                    <BsPerson className="w-5 h-5" />
                 </div>
                 <div className="flex items-center justify-center lg:hidden">
                     {!show ? <RiMenu3Line className="text-3xl" onClick={() => setShow(!show)} /> : <AiOutlineClose className="text-3xl" onClick={() => setShow(!show)} />} 
