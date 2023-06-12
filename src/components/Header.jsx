@@ -24,7 +24,7 @@ const Header = () => {
             </ul>
         </div>
         <div className="flex flex-1 justify-end space-x-0 sm:space-x-7">
-            <div className="flex bg-midGrey w-60 h-9 ">
+            <div className="flex sm:bg-midGrey sm:w-60 sm:h-9 ">
                 <input type="search" placeholder="What are you looking for?" className="border-0 outline-0 bg-transparent w-full h-full text-xs pl-5 hidden sm:block" />
                 <FiSearch className="flex items-center justify-center p-2 w-11 h-full cursor-pointer"/>
             </div>
