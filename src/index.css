@@ -15,7 +15,11 @@
 }
 
 .time-text {
-  @apply text-xl lg:text-4xl font-bold;
+  @apply text-xl lg:text-3xl font-bold;
+}
+
+.time-tag {
+  @apply text-sm font-medium;
 }
 
 .arrow {
@@ -24,4 +28,20 @@
 
 .flex-center {
   @apply flex justify-center items-center;
+}
+
+.section-heading {
+  @apply text-3xl sm:text-2xl lg:text-3xl font-semibold;
+}
+
+.enhance-timer {
+  @apply w-16 h-16 rounded-full bg-white flex-center flex-col 
+}
+
+.enhance-timer p {
+  @apply p-0 m-0 font-semibold
+}
+
+.enhance-timer span {
+  @apply text-[11px] p-0 m-0
 }

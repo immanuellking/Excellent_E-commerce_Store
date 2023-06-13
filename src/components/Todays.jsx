@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import SectionHeader from './SectionHeader'
+import TodayHeader from './TodayHeader'
 import Products from './Products';
 import Button from './Button';
 
@@ -17,9 +17,9 @@ const Todays = () => {
 
   return (
     <div className=" px-3 my-12 lg:px-12 lg:my-20 w-full">
-        <SectionHeader handleScroll={handleScroll}/>
+        <TodayHeader handleScroll={handleScroll}/>
         <Products slideRef={slideRef} />
-        <Button />
+        <Button title={"View All Products"}/>
     </div>
   )
 }

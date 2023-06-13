@@ -4,8 +4,8 @@ import { BsEye } from "react-icons/bs"
 
 const Product = ({ id, discount, img, name, price }) => {
     return (
-        <div className="w-[14rem] sm:w-[15rem] h-[25rem] flex flex-col space-y-3 rounded-bl-md rounded-br-md">
-            <div className="relative bg-midGrey h-[15rem] flex items-center justify-center">
+        <div className="w-[14rem] h-[25rem] flex flex-col space-y-3 rounded-bl-md rounded-br-md">
+            <div className="relative bg-midGrey h-[13rem] flex items-center justify-center">
                 <div className=" flex justify-center items-center">
                     <img src={img} alt="Product" className="w-full" />
                 </div>

@@ -1,34 +1,14 @@
 import React from 'react';
-import {BsArrowRight, BsArrowLeft} from "react-icons/bs";
-import Tag from './Tag';
+import Tag from "./Tag";
+import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 
 const SectionHeader = ({handleScroll}) => {
   return (
     <div className="flex flex-col space-y-9">
-        <Tag title={"Today's"} />
-        <div className="flex">
-            <div className="flex flex-col space-y-3 sm:space-y-0 sm:space-x-20 lg:space-x-0 sm:flex-row basis-[60%] justify-between">
-                <h1 className="text-3xl sm:text-2xl lg:text-4xl font-semibold">Flash Sales</h1>
-                <div className="flex space-x-1 lg:space-x-8 items-center justify-center">
-                    <div className="time">
-                        <span className="text-sm font-medium">Days</span>
-                        <h2 className="time-text">03</h2>
-                    </div> <span className="time-text text-brightRed">:</span>
-                    <div className="time">
-                        <span className="text-sm font-medium">Hours</span>
-                        <h2 className="time-text">23</h2>
-                    </div> <span className="time-text text-brightRed">:</span>
-                    <div className="time">
-                        <span className="text-sm font-medium">Minutes</span>
-                        <h2 className="time-text">19</h2>
-                    </div> <span className="time-text text-brightRed">:</span>
-                    <div className="time">
-                        <span className="text-sm font-medium">Seconds</span>
-                        <h2 className="time-text">56</h2>
-                    </div>
-                </div>
-            </div>
-            <div className="basis-[40%] flex items-center justify-end space-x-5">
+        <Tag title={"Category"} />
+        <div className="flex justify-between">
+            <h1 className="section-heading">Browse By Category</h1>
+            <div className="flex items-center justify-end space-x-5">
                 <div className="arrow">
                     <BsArrowLeft className="text-xl font-semibold" onClick={() => handleScroll("left")} />
                 </div>

@@ -1,7 +1,10 @@
 import './App.css';
 import Banner from './components/Banner';
+import CategorySection from './components/CategorySection';
 import HeaderSection from './components/HeaderSection';
-import Todays from "./components/Todays"
+import ThisMonth from './components/ThisMonth';
+import Todays from "./components/Todays";
+import Enhance from "./components/Enhance";
 
 function App() {
 
@@ -10,6 +13,9 @@ function App() {
       <HeaderSection />
       <Banner />
       <Todays />
+      <CategorySection />
+      <ThisMonth />
+      <Enhance />
     </>
   )
 }
