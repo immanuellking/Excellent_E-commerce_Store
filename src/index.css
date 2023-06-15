@@ -31,17 +31,17 @@
 }
 
 .section-heading {
-  @apply text-3xl sm:text-2xl lg:text-3xl font-semibold;
+  @apply text-2xl sm:text-2xl lg:text-3xl font-semibold;
 }
 
 .enhance-timer {
-  @apply w-16 h-16 rounded-full bg-white flex-center flex-col 
+  @apply w-[4rem] h-[4rem] sm:w-[5rem] sm:h-[5rem] lg:w-16 lg:h-16 rounded-full bg-white flex-center flex-col 
 }
 
 .enhance-timer p {
-  @apply p-0 m-0 font-semibold
+  @apply p-0 m-0 font-semibold text-lg lg:text-base
 }
 
 .enhance-timer span {
-  @apply text-[11px] p-0 m-0
+  @apply text-[11px] sm:text-sm lg:text-[11px] p-0 m-0 
 }

@@ -4,7 +4,7 @@ import Tag from './Tag';
 
 const TodayHeader = ({handleScroll}) => {
   return (
-    <div className="flex flex-col space-y-9">
+    <div className="flex flex-col space-y-6 sm:space-y-9 ">
         <Tag title={"Today's"} />
         <div className="flex">
             <div className="flex flex-col space-y-3 sm:space-y-0 sm:space-x-20 lg:space-x-0 sm:flex-row basis-[60%] justify-between">

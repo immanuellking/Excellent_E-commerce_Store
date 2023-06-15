@@ -5,6 +5,8 @@ import HeaderSection from './components/HeaderSection';
 import ThisMonth from './components/ThisMonth';
 import Todays from "./components/Todays";
 import Enhance from "./components/Enhance";
+import OurProducts from './components/OurProducts';
+import NewArrivals from './components/NewArrivals';
 
 function App() {
 
@@ -16,6 +18,8 @@ function App() {
       <CategorySection />
       <ThisMonth />
       <Enhance />
+      <OurProducts />
+      <NewArrivals />
     </>
   )
 }
