@@ -7,6 +7,8 @@ import Todays from "./components/Todays";
 import Enhance from "./components/Enhance";
 import OurProducts from './components/OurProducts';
 import NewArrivals from './components/NewArrivals';
+import Services from './components/Services';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -20,6 +22,8 @@ function App() {
       <Enhance />
       <OurProducts />
       <NewArrivals />
+      <Services />
+      <Footer />
     </>
   )
 }

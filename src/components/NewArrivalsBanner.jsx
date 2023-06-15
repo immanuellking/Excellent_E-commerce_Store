@@ -16,26 +16,26 @@ const ArrivalInfo = ({heading, info}) => {
 
 const NewArrivalsBanner = () => {
   return (
-    <div className="w-full h-[32rem] flex flex-col space-y-3 sm:space-y-0 sm:grid sm:grid-cols-4 sm:grid-rows-2 sm:gap-2 lg:gap-6 mt-10">
-      <div className="col-span-2 row-span-2 bg-[#0D0D0D] relative">
+    <div className="w-full h-full sm:h-[32rem] flex flex-col space-y-3 sm:space-y-0 sm:grid sm:grid-cols-4 sm:grid-rows-2 sm:gap-2 lg:gap-6 mt-10">
+      <div className="sm:col-span-2 sm:row-span-2 bg-[#0D0D0D] relative">
         <div className="h-full flex items-end justify-center">
-          <img src={game} alt="ps5" className="h-5/6" />
+          <img src={game} alt="ps5" className="sm:h-5/6" />
         </div>
         <ArrivalInfo heading={"PlayStation 5"} info={"Black and White version of the PS5 coming out on sale."} />
       </div>
-      <div className="col-span-2 bg-[#0D0D0D] flex items-end justify-end relative">
+      <div className="sm:col-span-2 bg-[#0D0D0D] flex items-end justify-end relative">
         <div className="h-full">
           <img src={womanHat} alt="woman in hat" className="h-full" />
         </div>
         <ArrivalInfo heading={"Women’s Collections"} info={"Featured woman collections that give you another vibe."} />
       </div>
-      <div className="bg-[#0D0D0D] flex-center relative py-4 sm:py-0">
+      <div className="bg-[#0D0D0D] flex-center relative py-4 ">
         <div className="h-full">
           <img src={wirelessSpeaker} alt="wireless speaker" />
         </div>
         <ArrivalInfo heading={"Speakers"} info={"Amazon wireless speakers"} />
       </div>
-      <div className="bg-[#0D0D0D] flex-center relative">
+      <div className="bg-[#0D0D0D] flex-center relative py-4 ">
         <div className="h-full">
           <img src={perfume} alt="perfume" />
         </div>
