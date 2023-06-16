@@ -29,6 +29,14 @@ export const AppProvider = ({ children }) => {
     dispatch({type: "ADD_ITEM_TO_CART", payload: id})
   }
 
+  const increase = (id) => {
+    dispatch({type: "INCREASE", payload: id})
+  }
+
+  const decrease = (id) => {
+    dispatch({type: "DECREASE", payload: id})
+  }
+
   console.log(state.cart)
 
   useEffect(() => {
@@ -36,7 +44,7 @@ export const AppProvider = ({ children }) => {
   },[])
 
   return (
-    <AppContext.Provider value={{...state, addToCart}}>
+    <AppContext.Provider value={{...state, addToCart, increase, decrease}}>
       {children}
     </AppContext.Provider>)
 };
