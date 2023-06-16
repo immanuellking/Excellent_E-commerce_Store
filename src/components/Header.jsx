@@ -11,21 +11,22 @@ import {useNavigate} from "react-router-dom"
 
 const Header = () => {
     const [show, setShow] = useState(false);
-    const { cart } = useGlobalContext();
+    const { cart, total } = useGlobalContext();
     const navigate = useNavigate();
 
     const toCart = () => {
         navigate("/cart")
     } 
     
-    let totalItems;
+    // let totalItems = 0;
 
-    if(cart.length > 1) {
-        totalItems = cart.reduce((acc, curr) =>{
-            const {quantity} = curr;
-            return acc += quantity
-        }, 0)
-    }
+    // if(cart.length > 1) {
+    //     totalItems = cart.reduce((acc, curr) =>{
+    //         const {quantity} = curr;
+    //         return acc += quantity
+    //     }, 0)
+    //     console.log(totalItems)
+    // }
 
   return (
     <div className="w-full flex py-4 px-3 items-center sm:py-8 sm:p-12 sm:items-end border-b-[1px] border-gray-300">
@@ -50,7 +51,7 @@ const Header = () => {
                 <div className="relative" onClick={toCart}>
                     <AiOutlineShoppingCart className="w-6 h-6 cursor-pointer hover:text-brightRed"/>
                     <div className="absolute flex-center w-6 h-6 text-xs font-medium rounded-full bg-brightRed text-lightGrey -top-4 -left-2 ">
-                        {totalItems}
+                        {total}
                     </div>
                 </div>
                 <div className="hidden sm:flex bg-[#DB4444] w-8 h-8 rounded-full justify-center items-center hover:bg-white hover:border-2 hover:border-[#DB4444] text-white hover:text-brightRed cursor-pointer">

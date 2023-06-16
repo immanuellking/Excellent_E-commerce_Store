@@ -4,6 +4,7 @@ import { useGlobalContext } from '../context/context';
 import {useNavigate} from "react-router-dom";
 import {FaAngleDown} from "react-icons/fa"
 import {FaAngleUp} from "react-icons/fa"
+import Button from '../components/Button';
 
 const Cart = () => {
     const { cart, increase, decrease } = useGlobalContext();
@@ -49,6 +50,18 @@ const Cart = () => {
                     </div>
                 )
             })}
+        </div>
+
+        <div>
+            <div>
+                <input type="text" />
+                <Button title={"Apply Coupon"} />
+            </div>
+            <div>
+                <h2>Cart Total</h2>
+                <div>
+                </div>
+            </div>
         </div>
     </section>
   )

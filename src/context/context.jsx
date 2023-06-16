@@ -40,6 +40,11 @@ export const AppProvider = ({ children }) => {
   console.log(state.cart)
 
   useEffect(() => {
+      dispatch({type: "TOTAL_ITEMS"})
+  }, [state.cart])
+
+
+  useEffect(() => {
     fetchStore()
   },[])
 

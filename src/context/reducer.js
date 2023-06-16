@@ -35,12 +35,25 @@ const reducer = (state, action) => {
     case "DECREASE":
       return {
         ...state,
-        cart: state.cart.map((cartItem) =>
-          cartItem.id === action.payload
-            ? { ...cartItem, quantity: cartItem.quantity - 1 }
-            : cartItem
-        ).filter((cartItem) => cartItem.quantity !== 0 )
+        cart: state.cart
+          .map((cartItem) =>
+            cartItem.id === action.payload
+              ? { ...cartItem, quantity: cartItem.quantity - 1 }
+              : cartItem
+          )
+          .filter((cartItem) => cartItem.quantity !== 0),
       };
+      break;
+
+    case "TOTAL_ITEMS":
+        let total = state.cart.reduce((acc, cur) => {
+            const {quantity} = cur;
+            return acc += quantity;
+        }, 0)
+      return {
+        ...state,
+        total,
+      }
       break;
 
     default:
