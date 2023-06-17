@@ -46,13 +46,19 @@ const reducer = (state, action) => {
       break;
 
     case "TOTAL_ITEMS":
-        let total = state.cart.reduce((acc, cur) => {
-            const {quantity} = cur;
-            return acc += quantity;
-        }, 0)
+        let {total, amount } = state.cart.reduce((accCartTotal, curCartItem) => {
+            const {quantity, price} = curCartItem;
+             accCartTotal.total += quantity;
+             accCartTotal.amount += (price * quantity)
+             return accCartTotal
+        }, {
+            total: 0,
+            amount: 0
+        })
       return {
         ...state,
         total,
+        amount
       }
       break;
 

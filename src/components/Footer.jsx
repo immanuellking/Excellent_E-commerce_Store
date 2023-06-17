@@ -10,8 +10,8 @@ import { FaLinkedinIn } from "react-icons/fa";
 const Footer = () => {
   return (
     <footer className="w-full bg-black">
-        <div className="px-3 py-12 lg:px-12 lg:py-20 text-lightGrey flex flex-wrap justify-between space-y-10 sm:space-y-0">
-            <div className="flex flex-col justify items-center sm:items-start sm:justify-start space-y-4 my-4">
+        <div className="px-3 py-12 lg:px-12 lg:py-20 text-lightGrey flex flex-wrap justify-between space-y-10">
+            <div className="flex flex-col w-full sm:w-auto items-center justify-center sm:items-start sm:justify-start space-y-4 my-4">
                 <h4 className="text-3xl sm:text-2xl font-bold">Exclusive</h4>
                 <p className="cursor-pointer">Suscribe</p>
                 <p className="cursor-pointer">Get 10% off your first order</p>
@@ -24,14 +24,14 @@ const Footer = () => {
             </div>
             {footerLinks.map((item, index) => {
                 const {header, items} = item;
-                return <div key={index} className="w-52 flex flex-col items-center sm:items-start justify-start space-y-4 my-4">
+                return <div key={index} className=" w-full sm:w-52 flex flex-col items-center justify-center sm:items-start sm:justify-start space-y-4 my-4">
                     <h4 className="text-2xl sm:text-xl font-medium">{header}</h4>
                     {items.map((link, index) => {
                         return <p key={index} className="cursor-pointer">{link}</p>
                     })}
                 </div>
             })}
-            <div className="flex flex-col items-center sm:items-start justify-start space-y-4 my-4">
+            <div className="flex flex-col w-full sm:w-auto items-center justify-center sm:items-start sm:justify-start space-y-4 my-4">
                 <h4 className="text-2xl sm:text-xl font-medium">Download App</h4>
                 <p className="text-xs cursor-pointer">Save $3 with App New User Only</p>
                 <div>

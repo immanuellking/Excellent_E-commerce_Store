@@ -11,7 +11,7 @@ import {useNavigate} from "react-router-dom"
 
 const Header = () => {
     const [show, setShow] = useState(false);
-    const { cart, total } = useGlobalContext();
+    const { total } = useGlobalContext();
     const navigate = useNavigate();
 
     const toCart = () => {
