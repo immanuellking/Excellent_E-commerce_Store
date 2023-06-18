@@ -29,7 +29,7 @@ const Product = ({ id, image, price, title  }) => {
                     <p className="line-through text-base font-medium text-black opacity-50">${oldPrice.toFixed(2)}</p>
                 </div>
             </div>
-            <button className="bg-black text-white text-base font-medium py-3 rounded-bl-md rounded-br-md" onClick={() => addToCart(id)} >
+            <button className="bg-black text-white text-base font-medium py-3 rounded-bl-md rounded-br-md hover:text-black hover:border-[1px] hover:border-black hover:bg-transparent duration-300 transition-all" onClick={() => addToCart(id)} >
                 Add To Cart
             </button>
         </div>
