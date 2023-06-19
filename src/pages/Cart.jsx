@@ -1,7 +1,7 @@
 import React from 'react';
 import { data } from '../data';
 import { useGlobalContext } from '../context/context';
-import {useNavigate} from "react-router-dom";
+import {useNavigate, Link} from "react-router-dom";
 import {FaAngleDown} from "react-icons/fa"
 import {FaAngleUp} from "react-icons/fa"
 import Button from '../components/Button';
@@ -9,6 +9,13 @@ import Button from '../components/Button';
 const Cart = () => {
     const { cart, increase, decrease, amount } = useGlobalContext();
     const navigate = useNavigate()
+
+    if (!cart.length) {
+        return <div className="w-full h-[25rem] flex-center flex-col space-y-16">
+            <h1 className="text-4xl lg:text-6xl">YOUR CART IS EMPTY</h1>
+            <Link to="/" className="h-14 w-56 bg-brightRed text-lightGrey flex-center text-lg">Go Back To Home</Link>
+        </div>
+    }
 
   return (
     <section className="px-3 my-12 lg:px-14 lg:my-20 w-full">

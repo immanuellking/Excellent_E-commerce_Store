@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect, useReducer } from "react";
+import React, { useContext, useRef, useEffect, useReducer } from "react";
 import reducer from "./reducer";
 
 const url = "https://fakestoreapi.com/products"
@@ -8,12 +8,25 @@ const initialState = {
   loading: false,
   store: [],
   cart: [],
+  wishList: [],
   total: 0,
   amount: 0,
+  totalWish: 0,
 };
 
 export const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const slideRef = useRef();
+
+  const handleScroll = (direction) => {
+    if(direction === "right" ) {
+        slideRef.current.scrollLeft += 300
+    }
+    if(direction === "left" ) {
+        slideRef.current.scrollLeft -= 300
+    }
+    console.log("hello")
+}
 
   const fetchStore = async () => {
     try {
@@ -29,6 +42,18 @@ export const AppProvider = ({ children }) => {
     dispatch({type: "ADD_ITEM_TO_CART", payload: id})
   }
 
+  const addToWishList = (id) => {
+    dispatch({type: "ADD_TO_WISHLIST", payload: id})
+  }
+
+  const moveWishListToCart = () => {
+    dispatch({type: "MOVE_WISHLIST_TO_CART"})
+  }
+
+  const deleteWish = (id) => {
+    dispatch({type: "DELETE_WISH_ITEM", payload: id})
+  }
+
   const increase = (id) => {
     dispatch({type: "INCREASE", payload: id})
   }
@@ -37,11 +62,12 @@ export const AppProvider = ({ children }) => {
     dispatch({type: "DECREASE", payload: id})
   }
 
-  console.log(state.cart)
+  // console.log(state.wishList)
 
   useEffect(() => {
-      dispatch({type: "TOTAL_ITEMS"})
-  }, [state.cart])
+      dispatch({type: "TOTAL_ITEMS"});
+      dispatch({type: "TOTAL_WISH"})
+  }, [state.cart, state.wishList])
 
 
   useEffect(() => {
@@ -49,7 +75,18 @@ export const AppProvider = ({ children }) => {
   },[])
 
   return (
-    <AppContext.Provider value={{...state, addToCart, increase, decrease}}>
+    <AppContext.Provider value={
+      {...state, 
+        addToCart, 
+        increase, 
+        decrease,
+        slideRef,
+        handleScroll,
+        addToWishList,
+        deleteWish,
+        moveWishListToCart
+      }
+      }>
       {children}
     </AppContext.Provider>)
 };

@@ -7,15 +7,19 @@ import {BsPerson} from "react-icons/bs";
 import {RiMenu3Line} from "react-icons/ri";
 import {SlCallIn} from "react-icons/sl";
 import { useGlobalContext } from "../context/context";
-import {useNavigate} from "react-router-dom"
+import {useNavigate, Link} from "react-router-dom"
 
 const Header = () => {
     const [show, setShow] = useState(false);
-    const { total } = useGlobalContext();
+    const { cart, total, wishList, totalWish } = useGlobalContext();
     const navigate = useNavigate();
 
     const toCart = () => {
         navigate("/cart")
+    } 
+
+    const toWishList = () => {
+        navigate("/wish-list")
     } 
     
     // let totalItems = 0;
@@ -35,7 +39,7 @@ const Header = () => {
                 <img src={logo} alt="exclusive" className="w-full h-full" />
             </div>
             <ul className="space-x-10 hidden lg:flex">
-                    <li className="header-links"><a href="#">Home</a></li>
+                    <li className="header-links"><Link to="/">Home</Link></li>
                     <li className="header-links"><a href="#">Contact</a></li>
                     <li className="header-links"><a href="#">About</a></li>
                     <li className="header-links"><a href="#">Signup</a></li>
@@ -47,7 +51,12 @@ const Header = () => {
                 <FiSearch className="flex items-center justify-center p-2 w-11 h-full cursor-pointer"/>
             </div>
             <div className="flex items-center space-x-3 lg:space-x-6">
-                <BsHeart className="w-5 h-5 cursor-pointer hover:text-brightRed" />
+                <div className="relative cursor-pointer" onClick={toWishList}>
+                    <BsHeart className="w-5 h-5 cursor-pointer hover:text-brightRed" />
+                    <div className="absolute flex-center w-6 h-6 text-xs font-medium rounded-full bg-brightRed text-lightGrey -top-4 -left-2">
+                        {totalWish}
+                    </div>
+                </div>
                 <div className="relative" onClick={toCart}>
                     <AiOutlineShoppingCart className="w-6 h-6 cursor-pointer hover:text-brightRed"/>
                     <div className="absolute flex-center w-6 h-6 text-xs font-medium rounded-full bg-brightRed text-lightGrey -top-4 -left-2 ">
@@ -62,7 +71,7 @@ const Header = () => {
                     {show && (
                         <div className="absolute top-40 right-2 flex bg-white p-6 ">
                             <ul className="space-y-5">
-                                <li className="mobile-header-links"><AiOutlineHome className="text-lg" /><a href="#">Home</a></li>
+                                <li className="mobile-header-links"><AiOutlineHome className="text-lg" /><Link to="/">Home</Link></li>
                                 <li className="mobile-header-links"><SlCallIn className="text-lg" /> <a href="#">Contact</a></li>
                                 <li className="mobile-header-links"><AiOutlineQuestionCircle className="text-lg" /> <a href="#">About</a></li>
                                 <li className="mobile-header-links"><BsPencilSquare className="text-lg" /> <a href="#">Sign Up</a></li>

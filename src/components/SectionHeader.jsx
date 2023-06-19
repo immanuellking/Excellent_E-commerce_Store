@@ -8,7 +8,7 @@ const SectionHeader = ({handleScroll, title, tag, direction}) => {
         <Tag title={tag} />
         <div className="flex justify-between">
             <h1 className="section-heading">{title}</h1>
-            {direction && <div className="flex items-center justify-end space-x-5">
+            {direction && <div className="flex items-center justify-end space-x-2 lg:space-x-5">
                 <div className="arrow">
                     <BsArrowLeft className="text-xl font-semibold" onClick={() => handleScroll("left")} />
                 </div>

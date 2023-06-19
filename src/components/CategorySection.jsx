@@ -16,7 +16,7 @@ const CategorySection = () => {
 
   return (
     <div className=" px-3 my-12 lg:px-12 lg:my-20 w-full">
-      <SectionHeader handleScroll={handleScroll} title={"Browse By Category"} tag={"Category"} />
+      <SectionHeader handleScroll={handleScroll} direction={true} title={"Browse By Category"} tag={"Category"} />
       <Categories slideRef={slideRef} />
     </div>
   )
