@@ -3,19 +3,27 @@ import { FiHeart } from "react-icons/fi";
 import { BsHeartFill } from "react-icons/bs";
 import { BsEye } from "react-icons/bs"
 import { useGlobalContext } from "../context/context";
+import { useNavigate } from "react-router-dom";
 
 const Product = ({ id, image, price, title  }) => {
     const {addToCart, addToWishList} = useGlobalContext();
-    const [liked, isLiked] = useState(false)
+    const [liked, isLiked] = useState(false);
+    const navigate = useNavigate()
     const  oldPrice = price + 30;
+
     const wishItems = (id) => {
         isLiked(true);
         addToWishList(id)
     }
+
+    const productDetail = (id) => {
+        navigate(`/product/${id}`)
+    }
+
     return (
         <div className="w-[14rem] h-[25rem] flex flex-col space-y-3 rounded-bl-md rounded-br-md">
             <div className="relative bg-midGrey h-[15rem] flex items-center justify-center">
-                <div className=" flex w-full h-full justify-center items-center">
+                <div className=" flex w-full h-full justify-center items-center" onClick={() => productDetail(id)}>
                     <img src={image} alt="Product" className="w-full h-full" />
                 </div>
                 <div className="absolute px-2 py-1 rounded-md bg-brightRed text-lightGrey text-sm top-3 left-3">-30</div>
