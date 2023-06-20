@@ -11,7 +11,7 @@ import {useNavigate, Link} from "react-router-dom"
 
 const Header = () => {
     const [show, setShow] = useState(false);
-    const { cart, total, wishList, totalWish } = useGlobalContext();
+    const { total, totalWish } = useGlobalContext();
     const navigate = useNavigate();
 
     const toCart = () => {
@@ -22,15 +22,6 @@ const Header = () => {
         navigate("/wish-list")
     } 
     
-    // let totalItems = 0;
-
-    // if(cart.length > 1) {
-    //     totalItems = cart.reduce((acc, curr) =>{
-    //         const {quantity} = curr;
-    //         return acc += quantity
-    //     }, 0)
-    //     console.log(totalItems)
-    // }
 
   return (
     <div className="w-full flex py-4 px-3 items-center sm:py-8 sm:p-12 sm:items-end border-b-[1px] border-gray-300">
@@ -53,13 +44,13 @@ const Header = () => {
             <div className="flex items-center space-x-3 lg:space-x-6">
                 <div className="relative cursor-pointer" onClick={toWishList}>
                     <BsHeart className="w-5 h-5 cursor-pointer hover:text-brightRed" />
-                    <div className="absolute flex-center w-6 h-6 text-xs font-medium rounded-full bg-brightRed text-lightGrey -top-4 -left-2">
+                    <div className="absolute flex-center w-5 h-5 text-xs font-medium rounded-full bg-brightRed text-lightGrey -top-4 -left-2">
                         {totalWish}
                     </div>
                 </div>
                 <div className="relative" onClick={toCart}>
                     <AiOutlineShoppingCart className="w-6 h-6 cursor-pointer hover:text-brightRed"/>
-                    <div className="absolute flex-center w-6 h-6 text-xs font-medium rounded-full bg-brightRed text-lightGrey -top-4 -left-2 ">
+                    <div className="absolute flex-center w-5 h-5 text-xs font-medium rounded-full bg-brightRed text-lightGrey -top-4 -left-2 ">
                         {total}
                     </div>
                 </div>

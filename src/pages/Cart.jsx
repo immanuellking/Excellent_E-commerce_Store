@@ -31,6 +31,7 @@ const Cart = () => {
                 <p className="w-72 flex-center">Subtotal</p>
             </div>
             {cart.map((item, index) => {
+                console.log(item)
                 const {id, image, title, price, quantity} = item;
                 console.log(item)
                 return (
@@ -63,7 +64,7 @@ const Cart = () => {
 
         <div className="flex flex-col space-y-10 lg:space-y-0 lg:flex-row items-center lg:items-start lg:justify-between mt-14 w-full">
             <div className="flex-center w-full space-y-3 sm:space-y-0 flex-col sm:flex-row">
-                <input type="text" placeholder="Coupon Code" className=" w-80 placeholder:px-6 h-14 border-[1px] mr-5" />
+                <input type="text" placeholder="Coupon Code" className=" w-80 placeholder:px-6 h-14 border-[1px] mr-5 border-black outline-none px-3" />
                 <Button title={"Apply Coupon"} />
             </div>
             <div className="px-6 py-8 w-full lg:w-[30rem] border-2 border-black ">

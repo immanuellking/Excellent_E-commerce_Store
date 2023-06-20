@@ -114,32 +114,34 @@ const reducer = (state, action) => {
         cart: updatedCart,
         wishList: [],
       };
-
-      // state.wishList.map((wishItem) => {
-      //   const wishItemFound = state.cart.find(
-      //     (item) => item.id === wishItem.id
-      //   );
-      //   const wishListFilter = state.cart.filter(
-      //     (item) => item.id !== wishItemFound.id
-      //   );
-      //   // const wishItemFilter = state.wishList.filter(
-      //   //   (item) => item.id !== wishItem.id
-      //   // );
-      //   if (wishItemFound) {
-      //     return {
-      //       ...state,
-      //       cart: [...wishListFilter],
-      //       wishList: [],
-      //     };
-      //   } else {
-      //     return {
-      //       ...state,
-      //       cart: [...state.cart, ...state.wishList],
-      //       wishList: [],
-      //     };
-      //   }
-      // });
       break;
+
+    case "PRODUCT_PAGE_TO_CART":
+      const productItem = state.store.find(
+        (item) => item.id === action.payload.id
+      );
+      const productItemExist = state.cart.find(
+        (item) => item.id === productItem.id
+      );
+
+      if (productItemExist) {
+        const updatedCartList = state.cart.map((item) => {
+          return item.id === productItem.id
+            ? { ...item, quantity: item.quantity + action.payload.quantity }
+            : item;
+        });
+        return { ...state, cart: updatedCartList };
+      } else {
+        return {
+          ...state,
+          cart: [
+            ...state.cart,
+            { ...productItem, quantity: action.payload.quantity },
+          ],
+        };
+      }
+      break;
+
     case "TOTAL_WISH":
       return {
         ...state,

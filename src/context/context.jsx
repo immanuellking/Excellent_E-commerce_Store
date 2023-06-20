@@ -62,7 +62,11 @@ export const AppProvider = ({ children }) => {
     dispatch({type: "DECREASE", payload: id})
   }
 
-  // console.log(state.wishList)
+  const itemToCart = (id, quantity) => {
+    dispatch({type: "PRODUCT_PAGE_TO_CART", payload: {"id": id, "quantity": quantity}})
+  }
+
+  console.log(state.cart)
 
   useEffect(() => {
       dispatch({type: "TOTAL_ITEMS"});
@@ -84,7 +88,8 @@ export const AppProvider = ({ children }) => {
         handleScroll,
         addToWishList,
         deleteWish,
-        moveWishListToCart
+        itemToCart,
+        moveWishListToCart,
       }
       }>
       {children}
