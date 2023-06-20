@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { BsStarFill, BsStarHalf } from 'react-icons/bs';
 import { FiHeart } from "react-icons/fi";
+import policy from "../assets/returnPolicy.png";
 import delivery from "../assets/icon-delivery.png";
-import returnIcon from "../assets/icon-return.png";
 
 const url = "https://fakestoreapi.com/products/";
 
@@ -74,7 +74,7 @@ const ProductPage = () => {
                             </div>
                         </div>
                         <div className="flex px-4 py-6 items-center justify-between">
-                            <img src={returnIcon} alt="return" />
+                            <img src={policy} alt="return-policy" />
                             <div className="basis-4/5 flex flex-col items-start">
                                 <h3 className="font-medium">Return Delivery</h3>
                                 <p>Free 30 Days Delivery Returns. <a href="#" className="underline">Details</a></p>
