@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { BsStarFill, BsStarHalf } from 'react-icons/bs';
 import { FiHeart } from "react-icons/fi";
-import { data } from '../data';
 import delivery from "../assets/icon-delivery.png";
 import iconReturn from "../assets/icon-return.png"
 
