@@ -34,49 +34,51 @@ const ProductPage = () => {
         <div className="w-full text-sm text-black mb-20 cursor-pointer">
             <span className="text-gray-500" onClick={() => navigate("/")}>Home</span> / Product / {title}
         </div>
-        <div className="flex">
-            <div className="basis-2/4">
-                <img src={image} alt={title} className="" />
+        <div className="flex flex-col lg:flex-row justify-between gap-y-5 lg:gap-y-0">
+            <div className="basis-2/4 flex-center">
+                <img src={image} alt={title} className="w-2/4 lg:w-4/5" />
             </div>
-            <div className="basis-2/4">
-                <div>
+            <div className="flex items-center justify-center lg:items-start flex-col basis-2/4">
+                <div className="space-y-4 pb-8 w-full flex items-center justify-center lg:items-start flex-col border-b-[1px]">
                     <h1 className="font-semibold text-2xl">{title}</h1>
-                    <div className="flex">
-                        <BsStarFill className="text-[#FFAD33] text-lg"/>
-                        <BsStarFill className="text-[#FFAD33] text-lg" />
-                        <BsStarFill className="text-[#FFAD33] text-lg" />
-                        <BsStarFill className="text-[#FFAD33] text-lg" />
-                        <BsStarHalf className="text-[#FFAD33] text-lg" />
-                        <p className="text-sm">{count ? `(${count} reviews)` : "(0 reviews)"} | <span>In Stock</span></p>
+                    <div className="flex gap-x-2">
+                        <div className="flex gap-x-1">
+                            <BsStarFill className="text-[#FFAD33] text-lg"/>
+                            <BsStarFill className="text-[#FFAD33] text-lg" />
+                            <BsStarFill className="text-[#FFAD33] text-lg" />
+                            <BsStarFill className="text-[#FFAD33] text-lg" />
+                            <BsStarHalf className="text-[#FFAD33] text-lg" />
+                        </div>
+                        <p className="text-sm">{count ? `(${count} reviews)` : "(0 reviews)"} | <span className="text-[#00FF66]">In Stock</span></p>
                     </div>
-                    <h3>${price}</h3>
-                    <p>{description}</p>
+                    <h3 className="text-2xl">${price}</h3>
+                    <p className="text-sm px-3 lg:px-0">{description}</p>
                 </div>
-                <div>
-                    <div>
-                        <div>
-                            <div>-</div>
-                            <div>2</div>
-                            <div>+</div>
+                <div className="pt-8 space-y-6 sm:space-y-8">
+                    <div className="flex justify-center lg:justify-start gap-x-4">
+                        <div className="flex-center w-40 h-11 border-black border-[1px] rounded-sm text-lg">
+                            <div className="h-full w-full basis-1/4 flex-center hover:bg-brightRed hover:text-lightGrey">-</div>
+                            <div className="h-full w-full basis-1/2 flex-center border-x-[1px] border-black font-semibold">2</div>
+                            <div className="h-full w-full basis-1/4 flex-center hover:bg-brightRed hover:text-lightGrey">+</div>
                         </div>
-                        <button>Buy Now</button>
-                        <div>
-                            <FiHeart className="text-black m-2 text-lg" />
+                        <button className="flex-center w-40 h-11 bg-brightRed text-lightGrey font-medium rounded-sm">Buy Now</button>
+                        <div className="w-11 h-11 flex-center border-[1px] border-black rounded-sm">
+                            <FiHeart className="text-black text-xl" />
                         </div>
                     </div>
-                    <div>
-                        <div>
+                    <div className="border-2 border-black w-full sm:w-[500px]">
+                        <div className="flex px-4 py-6 items-center justify-between border-b-2 border-black">
                             <img src={delivery} alt="delivery" />
-                            <div>
-                                <h3>Free Delivery</h3>
-                                <p>Enter your postal code for Delivery Availability</p>
+                            <div className="basis-4/5 flex flex-col items-start">
+                                <h3 className="font-medium">Free Delivery</h3>
+                                <p className="underline">Enter your postal code for Delivery Availability</p>
                             </div>
                         </div>
-                        <div>
+                        <div className="flex px-4 py-6 items-center justify-between">
                             <img src={iconReturn} alt="return" />
-                            <div>
-                                <h3>Return Delivery</h3>
-                                <p>Free 30 Days Delivery Returns. <a href="">Details</a></p>
+                            <div className="basis-4/5 flex flex-col items-start">
+                                <h3 className="font-medium">Return Delivery</h3>
+                                <p>Free 30 Days Delivery Returns. <a href="#" className="underline">Details</a></p>
                             </div>
                         </div>
                     </div>
