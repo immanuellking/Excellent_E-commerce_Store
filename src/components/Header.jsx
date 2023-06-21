@@ -32,7 +32,7 @@ const Header = () => {
             <ul className="space-x-10 hidden lg:flex">
                     <li className="header-links"><Link to="/">Home</Link></li>
                     <li className="header-links"><a href="#">Contact</a></li>
-                    <li className="header-links"><a href="#">About</a></li>
+                    <li className="header-links"><Link to="/about">About</Link></li>
                     <li className="header-links"><a href="#">Signup</a></li>
             </ul>
         </div>

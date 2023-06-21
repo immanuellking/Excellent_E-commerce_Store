@@ -32,7 +32,6 @@ export const AppProvider = ({ children }) => {
 
   function getTimeLeft (targetDate) {
     const totalSeconds = Math.floor((new Date() - targetDate) / 1000);
-    console.log(`TotalSecond: ${totalSeconds}`);
 
     const days = Math.abs(Math.floor(totalSeconds / 86400));
     const hours = Math.abs(Math.floor((totalSeconds % 86400) / 3600));

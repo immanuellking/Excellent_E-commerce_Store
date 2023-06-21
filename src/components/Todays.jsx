@@ -21,7 +21,7 @@ const Todays = () => {
     <div className=" px-3 my-12 lg:px-12 lg:my-20 w-full">
         <TodayHeader handleScroll={handleScroll} targetDate={targetDate}/>
         <Products slideRef={slideRef} />
-        <Button title={"View All Products"}/>
+        <Button title={"View All Products"} />
     </div>
   )
 }
