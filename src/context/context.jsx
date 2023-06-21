@@ -83,8 +83,6 @@ export const AppProvider = ({ children }) => {
     dispatch({type: "PRODUCT_PAGE_TO_CART", payload: {"id": id, "quantity": quantity}})
   }
 
-  console.log(state.cart)
-
   useEffect(() => {
       dispatch({type: "TOTAL_ITEMS"});
       dispatch({type: "TOTAL_WISH"})

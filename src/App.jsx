@@ -10,6 +10,7 @@ import ProductPage from './components/ProductPage';
 import AllProducts from './pages/AllProducts';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import CheckOut from './pages/CheckOut';
 
 function App() {
 
@@ -19,12 +20,13 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/wish-list" element={<WishLists />} />
           <Route path="product/:itemId" element={<ProductPage />} />
           <Route path="/products" element={<AllProducts />} />
           <Route path="*" element={<NotFound />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/cart/checkout" element={<CheckOut/>}/>
         </Routes>
       <Footer />
     </>

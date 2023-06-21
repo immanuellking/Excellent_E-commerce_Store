@@ -31,9 +31,7 @@ const Cart = () => {
                 <p className="w-72 flex-center">Subtotal</p>
             </div>
             {cart.map((item, index) => {
-                console.log(item)
                 const {id, image, title, price, quantity} = item;
-                console.log(item)
                 return (
                     <div key={index} className=" w-full h-20 flex justify-between items-center shadow-lg shadow-[rgba(0, 0, 0, 0.07)] px-5 rounded-md">
                         <div className="flex justify-start items-center space-x-4 w-auto sm:w-72 overflow-auto">
@@ -83,7 +81,7 @@ const Cart = () => {
                         <p>${amount.toFixed(2)}</p>
                     </div>
                 </div>
-                <Button title={"Proceed to checkout"} />
+                <Button title={"Proceed to checkout"} loc="/cart/checkout" />
             </div>
         </div>
     </section>

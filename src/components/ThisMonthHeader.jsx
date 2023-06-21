@@ -9,7 +9,7 @@ const ThisMonthHeader = () => {
         <div className="flex justify-between">
             <h1 className="section-heading">Best Selling <br className=" sm:hidden"/>Products</h1>
             <div className="">
-                <Button title={"View All"}/>
+                <Button title={"View All"} loc="/products" />
             </div>
         </div>
     </div>

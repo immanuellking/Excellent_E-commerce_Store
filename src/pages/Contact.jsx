@@ -37,14 +37,14 @@ const Contact = () => {
             </div>
             <div className="sm:basis-[70%] shadow-lg rounded-sm px-4 py-8 sm:px-8 sm:py-10">
                 <form action="" className="space-y-6">
-                    <div className="flex item-center justify-start gap-4 lg:gap-0 flex-wrap lg:justify-between">
-                        <label htmlFor="name" className="w-full">
+                    <div className="flex items-center justify-start gap-4 lg:gap-0 flex-wrap lg:justify-between">
+                        <label htmlFor="name" className="w-full sm:w-auto">
                             <input type="text" id="name" placeholder="Your Name" className="w-full sm:w-60 h-12 outline-none bg-midGrey placeholder:text-black placeholder:opacity-50 pl-4 rounded-sm" />
                         </label>
-                        <label htmlFor="email" className="w-full">
+                        <label htmlFor="email" className="w-full sm:w-auto">
                             <input type="text" id="email" placeholder="Your Email"  className="w-full sm:w-60 h-12 outline-none bg-midGrey placeholder:text-black placeholder:opacity-50 pl-4 rounded-sm" />
                         </label>
-                        <label htmlFor="phone" className="w-full">
+                        <label htmlFor="phone" className="w-full sm:w-auto">
                             <input type="tel" id="phone" placeholder="Your Phone"  className="w-full sm:w-60 h-12 outline-none bg-midGrey placeholder:text-black placeholder:opacity-50 pl-4 rounded-sm" />
                         </label>
                     </div>
