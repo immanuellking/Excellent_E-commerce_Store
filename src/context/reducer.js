@@ -1,7 +1,11 @@
 const reducer = (state, action) => {
   switch (action.type) {
     case "DISPLAY_STORE":
-      return { ...state, store: action.payload };
+      try {
+        return { ...state, store: action.payload, loading: false };
+      } catch (error) {
+        return {...state}
+      }
       break;
 
     case "ADD_ITEM_TO_CART":

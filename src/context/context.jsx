@@ -12,6 +12,7 @@ const initialState = {
   total: 0,
   amount: 0,
   totalWish: 0,
+  loading: true,
 };
 
 export const AppProvider = ({ children }) => {
@@ -26,7 +27,24 @@ export const AppProvider = ({ children }) => {
         slideRef.current.scrollLeft -= 300
     }
     console.log("hello")
-}
+  }
+  
+
+  function getTimeLeft (targetDate) {
+    const totalSeconds = Math.floor((new Date() - targetDate) / 1000);
+    console.log(`TotalSecond: ${totalSeconds}`);
+
+    const days = Math.abs(Math.floor(totalSeconds / 86400));
+    const hours = Math.abs(Math.floor((totalSeconds % 86400) / 3600));
+    const minutes = Math.abs(Math.floor((totalSeconds % 3600) / 60));
+    const seconds = Math.abs(Math.floor(totalSeconds % 60));
+    return {
+        days,
+        hours,
+        minutes,
+        seconds
+    }
+  }
 
   const fetchStore = async () => {
     try {
@@ -90,6 +108,7 @@ export const AppProvider = ({ children }) => {
         deleteWish,
         itemToCart,
         moveWishListToCart,
+        getTimeLeft,
       }
       }>
       {children}

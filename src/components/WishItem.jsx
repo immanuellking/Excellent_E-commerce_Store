@@ -3,8 +3,13 @@ import { BsTrash3 } from "react-icons/bs"
 import { useGlobalContext } from '../context/context';
 
 const WishItem = ({ id, image, price, title }) => {
-    const {deleteWish} = useGlobalContext();
+    const {deleteWish, addToCart} = useGlobalContext();
     const oldPrice = price + 30;
+
+    const addWishToCart = (id) => {
+        addToCart(id);
+        deleteWish(id);
+    }
 
   return (
     <div className="w-[14rem] h-[25rem] flex flex-col space-y-3 rounded-bl-md rounded-br-md">
@@ -26,7 +31,7 @@ const WishItem = ({ id, image, price, title }) => {
                     <p className="line-through text-base font-medium text-black opacity-50">${oldPrice.toFixed(2)}</p>
                 </div>
             </div>
-            <button className="bg-black text-white text-base font-medium py-3 rounded-bl-md rounded-br-md hover:text-black hover:border-[1px] hover:border-black hover:bg-transparent duration-300 transition-all" onClick={() => addToCart(id)} >
+            <button className="bg-black text-white text-base font-medium py-3 rounded-bl-md rounded-br-md hover:text-black hover:border-[1px] hover:border-black hover:bg-transparent duration-300 transition-all" onClick={() => addWishToCart(id)} >
                 Add To Cart
             </button>
     </div>

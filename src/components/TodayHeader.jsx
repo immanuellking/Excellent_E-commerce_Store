@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import {BsArrowRight, BsArrowLeft} from "react-icons/bs";
 import Tag from './Tag';
+import { useGlobalContext } from '../context/context';
 
 const TodayHeader = ({handleScroll, targetDate}) => {
+
+    const {getTimeLeft} = useGlobalContext()
 
     const [timeLeft, setTimeLeft] = useState(getTimeLeft(targetDate));
 
@@ -16,30 +19,6 @@ const TodayHeader = ({handleScroll, targetDate}) => {
         };
       }, [targetDate]);
 
-    function getTimeLeft (targetDate) {
-        const totalSeconds = Math.floor((new Date() - targetDate) / 1000);
-        console.log(`TotalSecond: ${totalSeconds}`);
-
-        const days = Math.abs(Math.floor(totalSeconds / 86400));
-        console.log(`Days: ${days}`);
-
-        const hours = Math.abs(Math.floor((totalSeconds % 86400) / 3600));
-        console.log(`Hours: ${hours}`);
-
-        const minutes = Math.abs(Math.floor((totalSeconds % 3600) / 60));
-        console.log(`Minutes: ${minutes}`);
-
-        const seconds = Math.abs(Math.floor(totalSeconds % 60));
-        console.log(`Seconds: ${seconds}`);
-
-        return {
-            days,
-            hours,
-            minutes,
-            seconds
-        }
-    }
-
     const {days, hours, minutes, seconds} = timeLeft;
 
   return (
@@ -48,7 +27,7 @@ const TodayHeader = ({handleScroll, targetDate}) => {
         <div className="flex">
             <div className="flex flex-col space-y-3 sm:space-y-0 sm:space-x-20 lg:space-x-0 sm:flex-row basis-[60%] justify-between">
                 <h1 className="section-heading">Flash Sales</h1>
-                <div className="flex space-x-1 lg:space-x-8 items-center justify-center">
+                <div className="flex space-x-1 lg:space-x-8 items-start justify-center">
                     <div className="time">
                         <span className="time-tag">Days</span>
                         <h2 className="time-text">{days}</h2>

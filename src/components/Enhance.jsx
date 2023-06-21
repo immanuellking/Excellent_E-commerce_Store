@@ -1,7 +1,26 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import speaker from "../assets/speaker.png"
+import { useGlobalContext } from '../context/context';
 
 const Enhance = () => {
+    const targetDate = new Date('2023-07-15T23:59:59');
+
+    const {getTimeLeft} = useGlobalContext();
+
+    const [timeLeft, setTimeLeft] = useState(getTimeLeft(targetDate));
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+          setTimeLeft(getTimeLeft(targetDate));
+        }, 1000);
+    
+        return () => {
+          clearInterval(timer);
+        };
+      }, [targetDate]);
+
+    const {days, hours, minutes, seconds} = timeLeft;
+
   return (
     <section className="px-3 my-12 lg:px-12 lg:my-20">
         <div className=" px-5 lg:px-10 py-14 flex space-y-16 lg:space-y-0 flex-col lg:flex-row bg-black">
@@ -12,19 +31,19 @@ const Enhance = () => {
                 </h1>
                 <div className="flex space-x-3 sm:space-x-8 lg:space-x-6">
                     <div className="enhance-timer">
-                        <p>23</p>
-                        <span>Hours</span>
-                    </div>
-                    <div className="enhance-timer">
-                        <p>05</p>
+                        <p>{days}</p>
                         <span>Days</span>
                     </div>
                     <div className="enhance-timer">
-                        <p>59</p>
+                        <p>{hours}</p>
+                        <span>Hours</span>
+                    </div>
+                    <div className="enhance-timer">
+                        <p>{minutes}</p>
                         <span>Minutes</span>
                     </div>
                     <div className="enhance-timer">
-                        <p>35</p>
+                        <p>{seconds}</p>
                         <span>Seconds</span>
                     </div>
                 </div>
