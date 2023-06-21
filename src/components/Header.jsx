@@ -31,7 +31,7 @@ const Header = () => {
             </div>
             <ul className="space-x-10 hidden lg:flex">
                     <li className="header-links"><Link to="/">Home</Link></li>
-                    <li className="header-links"><a href="#">Contact</a></li>
+                    <li className="header-links"><Link to="/contact">Contact</Link></li>
                     <li className="header-links"><Link to="/about">About</Link></li>
                     <li className="header-links"><a href="#">Signup</a></li>
             </ul>
@@ -63,8 +63,8 @@ const Header = () => {
                         <div className="absolute top-40 right-2 flex bg-white p-6 ">
                             <ul className="space-y-5">
                                 <li className="mobile-header-links"><AiOutlineHome className="text-lg" /><Link to="/">Home</Link></li>
-                                <li className="mobile-header-links"><SlCallIn className="text-lg" /> <a href="#">Contact</a></li>
-                                <li className="mobile-header-links"><AiOutlineQuestionCircle className="text-lg" /> <a href="#">About</a></li>
+                                <li className="mobile-header-links"><SlCallIn className="text-lg" /> <Link to="/contact">Contact</Link></li>
+                                <li className="mobile-header-links"><AiOutlineQuestionCircle className="text-lg" /> <Link to="/about">About</Link></li>
                                 <li className="mobile-header-links"><BsPencilSquare className="text-lg" /> <a href="#">Sign Up</a></li>
                                 <li className="mobile-header-links"><BsPerson className="text-lg" /> <a href="#">Manage My Account</a></li>
                             </ul>
