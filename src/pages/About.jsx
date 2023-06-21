@@ -5,6 +5,12 @@ import bag from "../assets/bag.png";
 import dollar from "../assets/dollar.png";
 import money from "../assets/money.png";
 import { useNavigate } from 'react-router-dom';
+import { FiTwitter, FiInstagram } from 'react-icons/fi';
+import { FaLinkedinIn } from 'react-icons/fa';
+import tom from "../assets/tom.png";
+import will from "../assets/will.png";
+import emma from "../assets/emma.png";
+import Services from '../components/Services';
 
 const stats = [
     {
@@ -37,16 +43,19 @@ const roles = [
     {
         id: 1,
         name: "Tom Cruise",
+        image: tom,
         position: "Founder & Chairman",
     },
     {
         id: 2,
         name: "Emma Watson",
+        image: emma,
         position: "Managing Director",
     },
     {
         id: 3,
         name: "Will Smith",
+        image: will,
         position: "Product Designer",
     },
 ]
@@ -96,14 +105,25 @@ const About = () => {
 
         <div className="flex-center flex-wrap mt-28 lg:mt-40 gap-8 px-3 lg:px-12">
             {roles.map((role) => {
-                const { id, name, position } = role;
+                const { id, image, name, position } = role;
                 return (
-                    <div key={id}>
-                        
+                    <div key={id} className="space-y-4">
+                        <img src={image} alt={name} />
+                        <div className="space-y-3">
+                            <h3 className="text-3xl font-medium">{name}</h3>
+                            <p>{position}</p>
+                            <div className="flex space-x-4">
+                                <FiTwitter className="w-6 h-6" />
+                                <FiInstagram className="w-6 h-6" />
+                                <FaLinkedinIn className="w-6 h-6" />
+                            </div>
+                        </div>
                     </div>
                 )
             })}
         </div>
+
+        <Services />
       
     </div>
   )

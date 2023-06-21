@@ -4,7 +4,7 @@ import { servicesData } from '../data';
 const Services = () => {
   return (
     <section className="px-3 my-12 lg:px-12 lg:my-20 w-full" >
-        <div className=" w-full flex flex-col lg:flex-row justify-around ">
+        <div className=" w-full flex flex-wrap justify-around ">
             {servicesData.map((service) => {
                 const {id, icon, header, text} = service;
                 return <div key={id} className="flex-center flex-col p-8" >
