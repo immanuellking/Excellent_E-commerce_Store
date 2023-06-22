@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import logo from "../assets/Exclusive.png";
 import {FiSearch} from "react-icons/fi";
 import {BsHeart, BsPencilSquare} from "react-icons/bs"
@@ -13,6 +13,8 @@ const Header = () => {
     const [show, setShow] = useState(false);
     const { total, totalWish } = useGlobalContext();
     const navigate = useNavigate();
+    const headerRef = useRef(null);
+    const [isSecondHeaderFixed, setIsSecondHeaderFixed] = useState(false);
 
     const toCart = () => {
         navigate("/cart")
@@ -21,10 +23,25 @@ const Header = () => {
     const toWishList = () => {
         navigate("/wish-list")
     } 
-    
+
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const secondHeaderOffsetTop = headerRef.current.offsetTop;
+            const isScrolledToTop = window.scrollY >= secondHeaderOffsetTop;
+
+            setIsSecondHeaderFixed(isScrolledToTop && window.scrollY > 0);
+        }
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        }
+    }, [])
 
   return (
-    <div className="w-full flex py-4 px-3 items-center sm:py-8 sm:p-12 sm:items-end border-b-[1px] border-gray-300">
+    <div className={`w-full flex py-4 px-3 items-center sm:py-8 sm:p-12 sm:items-end border-b-[1px] border-gray-300 ${isSecondHeaderFixed ? "fixed top-0 left-0 z-[1000]": ""} bg-white`} ref={headerRef}>
         <div className="flex flex-1 justify-between">
             <div className="w-24 h-4 sm:w-32 sm:h-6">
                 <img src={logo} alt="exclusive" className="w-full h-full" />
