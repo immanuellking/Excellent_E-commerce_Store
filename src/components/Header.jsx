@@ -15,6 +15,7 @@ const Header = () => {
     const navigate = useNavigate();
     const headerRef = useRef(null);
     const [isSecondHeaderFixed, setIsSecondHeaderFixed] = useState(false);
+    const [menuTop, setMenuTop] = useState(160)
 
     const toCart = () => {
         navigate("/cart")
@@ -31,6 +32,9 @@ const Header = () => {
             const isScrolledToTop = window.scrollY >= secondHeaderOffsetTop;
 
             setIsSecondHeaderFixed(isScrolledToTop && window.scrollY > 0);
+
+            const menuTop = headerRef.current.offsetHeight
+            setMenuTop(menuTop)
         }
 
         window.addEventListener("scroll", handleScroll);
@@ -38,7 +42,7 @@ const Header = () => {
         return () => {
             window.removeEventListener("scroll", handleScroll);
         }
-    }, [])
+    }, [window.scrollY])
 
   return (
     <div className={`w-full flex py-4 px-3 items-center sm:py-8 sm:p-12 sm:items-end border-b-[1px] border-gray-300 ${isSecondHeaderFixed ? "fixed top-0 left-0 z-[1000]": ""} bg-white`} ref={headerRef}>
@@ -77,7 +81,7 @@ const Header = () => {
                 <div className="flex items-center justify-center lg:hidden">
                     {!show ? <RiMenu3Line className="text-3xl" onClick={() => setShow(!show)} /> : <AiOutlineClose className="text-3xl" onClick={() => setShow(!show)} />} 
                     {show && (
-                        <div className="absolute top-40 right-2 flex bg-white p-6 ">
+                        <div className="absolute right-2 flex bg-white p-6 " style={{top: `${menuTop}px`}}>
                             <ul className="space-y-5">
                                 <li className="mobile-header-links"><AiOutlineHome className="text-lg" /><Link to="/">Home</Link></li>
                                 <li className="mobile-header-links"><SlCallIn className="text-lg" /> <Link to="/contact">Contact</Link></li>

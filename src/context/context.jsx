@@ -5,14 +5,13 @@ const url = "https://fakestoreapi.com/products"
 export const AppContext = React.createContext();
 
 const initialState = {
-  loading: false,
+  loading: true,
   store: [],
   cart: [],
   wishList: [],
   total: 0,
   amount: 0,
   totalWish: 0,
-  loading: true,
 };
 
 export const AppProvider = ({ children }) => {
