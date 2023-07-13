@@ -1,9 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Products from '../components/Products';
 import ScrollToTop from '../components/ScrollToTop';
+import Product from '../components/Product';
+import { useGlobalContext } from '../context/context';
 
 const AllProducts = () => {
+  const {store} = useGlobalContext();
   const navigate = useNavigate();
   
 
@@ -13,7 +15,13 @@ const AllProducts = () => {
      <div className="w-full text-sm text-black mb-20 cursor-pointer">
         <span className="text-gray-500 hover:text-black" onClick={() => navigate("/")}>Home</span> / Products
       </div>
-      <Products wrap={true} />
+      <div className={"w-full flex mt-10 gap-8 flex-wrap"}>
+      {store.map((item, index) => (
+        <div key={index}>
+          <Product {...item} />
+        </div>
+      ))}
+    </div>
     </div>
   )
 }

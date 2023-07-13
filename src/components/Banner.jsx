@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 const Banner = () => {
     const navigate = useNavigate();
   return (
-    <section className="mx-3 my-6  lg:mx-12 lg:my-12 h-[70%] md:h-4/5 bg-black">
+    <section className="mx-0 my-6  lg:mx-12 lg:my-12 h-[70%] md:h-4/5 bg-black w-full">
         <div className="flex flex-col md:flex-row w-full h-full items-center justify-center text-lightGrey p-4 space-y-4 md:space-y-0">
             <div className="flex-1 flex flex-col justify-center h-full space-y-2 md:space-y-4 lg:space-y-6 p-4 lg:pl-20 lg:py-0 lg:pr-0">
                 <div className="flex items-center">

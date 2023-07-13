@@ -45,7 +45,7 @@ const Header = () => {
     }, [window.scrollY])
 
   return (
-    <div className={`w-full flex py-4 px-3 items-center sm:py-8 sm:p-12 sm:items-end border-b-[1px] border-gray-300 ${isSecondHeaderFixed ? "fixed top-0 left-0 z-[1000]": ""} bg-white`} ref={headerRef}>
+    <div className={`w-full flex py-4 px-3 items-center sm:py-8 sm:px-12 sm:items-end border-b-[1px] border-gray-300 ${isSecondHeaderFixed ? "fixed top-0 left-0 z-[1000]": ""} bg-white`} ref={headerRef}>
         <div className="flex flex-1 justify-between">
             <div className="w-24 h-4 sm:w-32 sm:h-6">
                 <img src={logo} alt="exclusive" className="w-full h-full" />

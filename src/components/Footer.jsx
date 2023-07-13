@@ -9,7 +9,7 @@ import { FaLinkedinIn } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-black">
+    <footer className="w-screen bg-black">
         <div className="px-3 py-12 lg:px-12 text-lightGrey flex flex-wrap lg:justify-between sm:gap-x-20 lg:gap-x-0 gap-y-8 sm:gap-y-0">
             <div className="flex flex-col w-full sm:w-auto items-center justify-center sm:items-start sm:justify-start space-y-4 my-4">
                 <h4 className="text-3xl sm:text-2xl font-bold">Exclusive</h4>
