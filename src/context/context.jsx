@@ -16,17 +16,6 @@ const initialState = {
 
 export const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const slideRef = useRef();
-
-  const handleScroll = (direction) => {
-    if(direction === "right" ) {
-        slideRef.current.scrollLeft += 300
-    }
-    if(direction === "left" ) {
-        slideRef.current.scrollLeft -= 300
-    }
-    console.log("hello")
-  }
   
 
   function getTimeLeft (targetDate) {
@@ -98,8 +87,6 @@ export const AppProvider = ({ children }) => {
         addToCart, 
         increase, 
         decrease,
-        slideRef,
-        handleScroll,
         addToWishList,
         deleteWish,
         itemToCart,

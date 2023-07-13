@@ -47,8 +47,8 @@ const TodayHeader = ({handleScroll, targetDate}) => {
                 </div>
             </div>
             <div className="basis-[40%] flex items-center justify-end space-x-5">
-                <div className="arrow">
-                    <BsArrowLeft className="text-xl font-semibold" onClick={() => handleScroll("left")} />
+                <div className="arrow" onClick={() => handleScroll("left")}>
+                    <BsArrowLeft className="text-xl font-semibold"/>
                 </div>
                 <div className="arrow" onClick={() => handleScroll("right")}>
                     <BsArrowRight className="text-xl font-semibold" />
