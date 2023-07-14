@@ -7,13 +7,13 @@ const Todays = () => {
     const slideRef = useRef();
 
     const handleScroll = (direction) => {
-        if(direction === "right" ) {
-            slideRef.current.scrollLeft += 300
+        if (direction === "right") {
+          slideRef.current.scrollBy({ left: 300, behavior: 'smooth' });
         }
-        if(direction === "left" ) {
-            slideRef.current.scrollLeft -= 300
+        if (direction === "left") {
+          slideRef.current.scrollBy({ left: -300, behavior: 'smooth' });
         }
-    }
+      }
 
     const targetDate = new Date('2023-07-15T23:59:59');
 
