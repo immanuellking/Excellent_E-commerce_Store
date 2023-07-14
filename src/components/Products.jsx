@@ -13,7 +13,7 @@ const Products = ({slideRef}) => {
 
 
   return (
-    <div className={"w-full flex mt-10 gap-8 overflow-x-hidden"} ref={slideRef}>
+    <div className={"w-full flex mt-10 gap-8 overflow-x-scroll lg:overflow-x-hidden"} ref={slideRef}>
       {store.map((item, index) => (
         <div key={index}>
           <Product {...item} />
