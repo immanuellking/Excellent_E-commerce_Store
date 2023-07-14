@@ -5,6 +5,7 @@ import {useNavigate, Link} from "react-router-dom";
 import {FaAngleDown} from "react-icons/fa"
 import {FaAngleUp} from "react-icons/fa"
 import Button from '../components/Button';
+import ScrollToTop from '../components/ScrollToTop';
 
 const Cart = () => {
     const { cart, increase, decrease, amount } = useGlobalContext();
@@ -12,6 +13,7 @@ const Cart = () => {
 
     if (!cart.length) {
         return <div className="w-full h-[25rem] flex-center flex-col space-y-16">
+            <ScrollToTop />
             <h1 className="text-4xl lg:text-6xl">YOUR CART IS EMPTY</h1>
             <Link to="/" className="h-14 w-56 bg-brightRed text-lightGrey flex-center text-lg">Go Back To Home</Link>
         </div>
@@ -19,6 +21,7 @@ const Cart = () => {
 
   return (
     <section className="px-3 my-12 lg:px-14 lg:my-20 w-full">
+        <ScrollToTop />
         <div className="text-sm text-black mb-20 cursor-pointer">
             <span className="text-gray-500" onClick={() => navigate("/")}>Home</span> / Cart
         </div>

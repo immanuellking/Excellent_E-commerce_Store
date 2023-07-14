@@ -15,7 +15,7 @@ const AllProducts = () => {
      <div className="w-full text-sm text-black mb-20 cursor-pointer">
         <span className="text-gray-500 hover:text-black" onClick={() => navigate("/")}>Home</span> / Products
       </div>
-      <div className={"w-full flex mt-10 gap-8 flex-wrap"}>
+      <div className={"w-full flex mt-10 gap-8 flex-wrap flex-center"}>
       {store.map((item, index) => (
         <div key={index}>
           <Product {...item} />

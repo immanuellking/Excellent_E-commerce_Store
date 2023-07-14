@@ -11,6 +11,7 @@ import tom from "../assets/tom.png";
 import will from "../assets/will.png";
 import emma from "../assets/emma.png";
 import Services from '../components/Services';
+import ScrollToTop from '../components/ScrollToTop';
 
 const stats = [
     {
@@ -66,6 +67,7 @@ const About = () => {
 
   return (
     <div className="my-12 lg:my-20 w-full">
+        <ScrollToTop />
         <div className="w-full text-sm text-black mb-10 lg:mb-16 cursor-pointer px-3 lg:px-12">
             <span className="text-gray-500 hover:text-black" onClick={() => navigate("/")}>Home</span> / About
         </div>

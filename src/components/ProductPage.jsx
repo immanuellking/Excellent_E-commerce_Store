@@ -5,6 +5,7 @@ import { FiHeart } from "react-icons/fi";
 import policy from "../assets/returnPolicy.png";
 import delivery from "../assets/icon-delivery.png";
 import { useGlobalContext } from '../context/context';
+import ScrollToTop from './ScrollToTop';
 
 const url = "https://fakestoreapi.com/products/";
 
@@ -55,8 +56,9 @@ const ProductPage = () => {
     const {count} = rating || {}
   return (
     <section className="px-3 lg:px-12 my-12 w-full">
+        <ScrollToTop />
         <div className="w-full text-sm text-black mb-20 cursor-pointer">
-            <span className="text-gray-500" onClick={() => navigate("/")}>Home</span> / Product / {title}
+            <span className="text-gray-500" onClick={() => navigate("/")}>Home</span> / Product / {title.slice(0, 22)}
         </div>
         <div className="flex flex-col lg:flex-row justify-between gap-y-5 lg:gap-y-0">
             <div className="basis-2/4 flex-center">

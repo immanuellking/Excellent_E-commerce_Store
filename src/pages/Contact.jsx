@@ -1,10 +1,12 @@
 import React from 'react';
 import { BsTelephone } from 'react-icons/bs';
 import { AiOutlineMail } from 'react-icons/ai';
+import ScrollToTop from '../components/ScrollToTop';
 
 const Contact = () => {
   return (
     <div className="my-12 px-3 lg:px-12 lg:my-20 w-full">
+        <ScrollToTop />
         <div className="w-full text-sm text-black mb-10 lg:mb-16 cursor-pointer">
             <span className="text-gray-500 hover:text-black" onClick={() => navigate("/")}>
                 Home
