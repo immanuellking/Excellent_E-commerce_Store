@@ -56,7 +56,7 @@ const Cart = () => {
                             </div>
                         </div>
                         <div className="flex-center w-72">
-                            <p>${price * quantity}</p>
+                            <p>${(price * quantity).toFixed(2)}</p>
                         </div>
                     </div>
                 )
