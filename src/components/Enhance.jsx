@@ -3,7 +3,7 @@ import speaker from "../assets/speaker.png"
 import { useGlobalContext } from '../context/context';
 
 const Enhance = () => {
-    const targetDate = new Date('2023-07-15T23:59:59');
+    const targetDate = new Date('2023-11-15T23:59:59');
 
     const {getTimeLeft} = useGlobalContext();
 
