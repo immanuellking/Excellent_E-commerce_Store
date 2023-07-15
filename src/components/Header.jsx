@@ -35,6 +35,10 @@ const Header = () => {
 
             const menuTop = headerRef.current.offsetHeight
             setMenuTop(menuTop)
+
+            if(window.scrollY >= secondHeaderOffsetTop) {
+
+            }
         }
 
         window.addEventListener("scroll", handleScroll);
@@ -45,10 +49,10 @@ const Header = () => {
     }, [window.scrollY])
 
   return (
-    <div className={`w-full flex py-4 px-3 items-center sm:py-8 sm:px-12 sm:items-end border-b-[1px] border-gray-300 ${isSecondHeaderFixed ? "fixed top-0 left-0 z-[1000]": ""} bg-white`} ref={headerRef}>
+    <div className={`w-full flex py-4 px-3 items-center sm:py-8 sm:px-12 sm:items-end border-b-[1px] border-gray-300 ${isSecondHeaderFixed ? "fixed top-0 left-0 z-[1000]" : "relative"} bg-white`} ref={headerRef}>
         <div className="flex flex-1 justify-between">
-            <div className="w-24 h-4 sm:w-32 sm:h-6">
-                <img src={logo} alt="exclusive" className="w-full h-full" />
+            <div className="w-24 h-4 sm:w-32 sm:h-6" >
+                <img src={logo} alt="exclusive" className="w-full h-full" onClick={() => navigate("/")} />
             </div>
             <ul className="space-x-10 hidden lg:flex">
                     <li className="header-links"><Link to="/">Home</Link></li>
@@ -78,10 +82,10 @@ const Header = () => {
                 <div className="hidden sm:flex bg-[#DB4444] w-8 h-8 rounded-full justify-center items-center hover:bg-white hover:border-2 hover:border-[#DB4444] text-white hover:text-brightRed cursor-pointer">
                     <BsPerson className="w-5 h-5" />
                 </div>
-                <div className="flex items-center justify-center lg:hidden">
+                <div className="flex items-center justify-center lg:hidden z-[1000]">
                     {!show ? <RiMenu3Line className="text-3xl" onClick={() => setShow(!show)} /> : <AiOutlineClose className="text-3xl" onClick={() => setShow(!show)} />} 
                     {show && (
-                        <div className="absolute right-2 flex bg-white p-6 " style={{top: `${menuTop}px`}}>
+                        <div className="absolute right-0 flex bg-white p-6" style={{top: `${menuTop}px`}}>
                             <ul className="space-y-5">
                                 <li className="mobile-header-links"><AiOutlineHome className="text-lg" /><Link to="/">Home</Link></li>
                                 <li className="mobile-header-links"><SlCallIn className="text-lg" /> <Link to="/contact">Contact</Link></li>

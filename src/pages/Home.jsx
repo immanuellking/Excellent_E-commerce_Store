@@ -12,7 +12,6 @@ import ScrollToTop from '../components/ScrollToTop';
 const Home = () => {
   return (
     <>
-      <ScrollToTop />
       <Banner />
       <Todays />
       <CategorySection />
