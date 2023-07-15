@@ -27,7 +27,7 @@ const Footer = () => {
                 return <div key={index} className=" w-full sm:w-52 flex flex-col items-center justify-center sm:items-start sm:justify-start space-y-4 my-4">
                     <h4 className="text-2xl sm:text-xl font-medium">{header}</h4>
                     {items.map((link, index) => {
-                        return <p key={index} className="cursor-pointer">{link}</p>
+                        return <p key={index} className="cursor-pointer text-center sm:text-left">{link}</p>
                     })}
                 </div>
             })}
@@ -46,7 +46,7 @@ const Footer = () => {
             </div>
         </div>
         <div className="text-white text-xs w-full text-center border-t-[0.5px] border-midGrey py-4">
-            &copy; Copyright Rimel 2022. All right reserved
+            &copy;Designed By Rimel, Developed By Ebube 2022. All right reserved
         </div>
     </footer>
   )

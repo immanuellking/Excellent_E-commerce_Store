@@ -1,18 +1,10 @@
-import React, {useRef} from 'react';
+import React from 'react';
 import SectionHeader from './SectionHeader';
 import Categories from './Categories';
+import useHandleScroll from '../context/useHandleScroll';
 
 const CategorySection = () => {
-  const slideRef = useRef();
-
-  const handleScroll = (direction) => {
-    if (direction === "right") {
-      slideRef.current.scrollBy({ left: 300, behavior: 'smooth' });
-    }
-    if (direction === "left") {
-      slideRef.current.scrollBy({ left: -300, behavior: 'smooth' });
-    }
-  }
+  const {slideRef, handleScroll} = useHandleScroll()
 
   return (
     <div className="px-3 my-12 lg:px-12 lg:my-20 w-full">

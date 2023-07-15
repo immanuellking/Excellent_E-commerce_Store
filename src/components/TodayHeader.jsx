@@ -25,8 +25,8 @@ const TodayHeader = ({handleScroll, targetDate}) => {
     <div className="flex flex-col space-y-6 sm:space-y-9 ">
         <Tag title={"Today's"} />
         <div className="flex">
-            <div className="flex flex-col space-y-3 sm:space-y-0 sm:space-x-20 lg:space-x-0 sm:flex-row basis-[60%] justify-between">
-                <h1 className="section-heading">Flash Sales</h1>
+            <div className="w-full flex justify-center flex-col space-y-3 sm:space-y-0 sm:space-x-20 lg:space-x-0 sm:flex-row sm:basis-[60%] sm:justify-between">
+                <h1 className="section-heading text-center sm:text-left">Flash Sales</h1>
                 <div className="flex space-x-1 lg:space-x-8 items-start justify-center">
                     <div className="time">
                         <span className="time-tag">Days</span>
@@ -46,7 +46,7 @@ const TodayHeader = ({handleScroll, targetDate}) => {
                     </div>
                 </div>
             </div>
-            <div className="basis-[40%] flex items-center justify-end space-x-5">
+            <div className="basis-[40%] lg:flex items-center justify-end space-x-5 hidden">
                 <div className="arrow" onClick={() => handleScroll("left")}>
                     <BsArrowLeft className="text-xl font-semibold"/>
                 </div>

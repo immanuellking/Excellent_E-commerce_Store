@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import speaker from "../assets/speaker.png"
 import { useGlobalContext } from '../context/context';
+import { useNavigate } from 'react-router-dom';
 
 const Enhance = () => {
     const targetDate = new Date('2023-11-15T23:59:59');
@@ -8,6 +9,8 @@ const Enhance = () => {
     const {getTimeLeft} = useGlobalContext();
 
     const [timeLeft, setTimeLeft] = useState(getTimeLeft(targetDate));
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -47,7 +50,7 @@ const Enhance = () => {
                         <span>Seconds</span>
                     </div>
                 </div>
-                <button className="py-3 px-8 mt-8 border-2 bg-lightGreen border-lightGreen rounded-md font-medium text-lightGrey hover:text-lightGreen hover:bg-lightGrey hover:border-2 hover:border-lightGreen transition-all duration-500">Buy Now!</button>
+                <button onClick={() => navigate("/products")} className="py-3 px-8 mt-8 border-2 bg-lightGreen border-lightGreen rounded-md font-medium text-lightGrey hover:text-lightGreen hover:bg-lightGrey hover:border-2 hover:border-lightGreen transition-all duration-500">Buy Now!</button>
             </div>
             <div className="basis-2/4 flex-center">
                 <img src={speaker} alt="speaker image" className=" w-[90%] lg:w-full lg:h-full" />

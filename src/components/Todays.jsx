@@ -1,19 +1,11 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import TodayHeader from './TodayHeader'
 import Products from './Products';
 import Button from './Button';
+import useHandleScroll from '../context/useHandleScroll';
 
 const Todays = () => {
-    const slideRef = useRef();
-
-    const handleScroll = (direction) => {
-        if (direction === "right") {
-          slideRef.current.scrollBy({ left: 300, behavior: 'smooth' });
-        }
-        if (direction === "left") {
-          slideRef.current.scrollBy({ left: -300, behavior: 'smooth' });
-        }
-      }
+    const {slideRef, handleScroll} = useHandleScroll()
 
     const targetDate = new Date('2023-10-15T23:59:59');
 

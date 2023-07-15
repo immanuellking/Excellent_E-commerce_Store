@@ -11,7 +11,7 @@ const WishLists = () => {
   if (!wishList.length) {
     return <div className="w-full h-[25rem] flex-center flex-col space-y-16">
       <ScrollToTop />
-        <h1 className="text-4xl lg:text-6xl">YOUR WISH-LIST IS EMPTY</h1>
+        <h1 className="text-4xl text-center lg:text-6xl">YOUR WISH-LIST IS EMPTY😖</h1>
         <Link to="/" className="h-14 w-56 bg-brightRed text-lightGrey flex-center text-lg">Go Back To Home</Link>
     </div>
 }

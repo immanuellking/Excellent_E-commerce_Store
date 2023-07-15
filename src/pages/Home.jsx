@@ -7,7 +7,6 @@ import Enhance from "../components/Enhance"
 import OurProducts from "../components/OurProducts"
 import NewArrivals from "../components/NewArrivals"
 import Services from "../components/Services"
-import ScrollToTop from '../components/ScrollToTop';
 
 const Home = () => {
   return (
