@@ -15,7 +15,9 @@ const Cart = () => {
         return <div className="w-full h-[25rem] flex-center flex-col space-y-16">
             <ScrollToTop />
             <h1 className="text-4xl text-center lg:text-6xl">YOUR CART IS EMPTY😕</h1>
-            <Link to="/" className="h-14 w-56 bg-brightRed text-lightGrey flex-center text-lg">Go Back To Home</Link>
+            <Link to="/" className="h-14 w-56 bg-brightRed text-lightGrey flex-center text-lg hover:text-brightRed hover:bg-lightGrey hover:border-2 hover:border-brightRed transition-all duration-500">
+                Go Back To Home
+            </Link>
         </div>
     }
 

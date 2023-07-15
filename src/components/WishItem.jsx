@@ -8,7 +8,6 @@ const WishItem = ({ id, image, price, title }) => {
 
     const addWishToCart = (id) => {
         addToCart(id);
-        deleteWish(id);
     }
 
   return (
