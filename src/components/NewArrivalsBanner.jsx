@@ -3,13 +3,15 @@ import game from "../assets/ps5.png";
 import womanHat from "../assets/woman-hat.png";
 import wirelessSpeaker from "../assets/wireless-speakers.png";
 import perfume from "../assets/perfume.png";
+import { useNavigate } from "react-router-dom";
 
 const ArrivalInfo = ({heading, info}) => {
+  const navigate = useNavigate();
   return (
     <div className="text-lightGrey absolute bottom-6 left-3 lg:left-6 ">
       <h1 className="text-2xl font-semibold">{heading}</h1>
       <p className="text-sm sm:py-1 lg:py-3 w-44">{info}</p>
-      <a href="#" className="underline">Shop Now</a>
+      <a onClick={() => navigate("/products")} className="underline cursor-pointer">Shop Now</a>
     </div>
   )
 }
