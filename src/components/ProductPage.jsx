@@ -58,7 +58,7 @@ const ProductPage = () => {
     <section className="px-3 lg:px-12 my-12 w-full">
         <ScrollToTop />
         <div className="w-full text-sm text-black mb-20 cursor-pointer">
-            <span className="text-gray-500" onClick={() => navigate("/")}>Home</span> / Product / {title.slice(0, 22)}
+            <span className="text-gray-500" onClick={() => navigate("/")}>Home</span> / Product / {title ? title.slice(0, 22) : null}
         </div>
         <div className="flex flex-col lg:flex-row justify-between gap-y-5 lg:gap-y-0">
             <div className="basis-2/4 flex-center">
